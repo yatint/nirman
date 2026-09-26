@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1f2a28;
+}
+
+h1, h2, h3, h4, h5, .font-head {
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    background: #f39019;
+    color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1eadd; }
+::-webkit-scrollbar-thumb { background: #16714f; border-radius: 8px; }
+
+@layer base {
+  :root {
+        --background: 40 33% 97%;
+        --foreground: 165 20% 14%;
+        --card: 0 0% 100%;
+        --card-foreground: 165 20% 14%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 165 20% 14%;
+        --primary: 158 65% 26%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 40 33% 92%;
+        --secondary-foreground: 165 20% 14%;
+        --muted: 40 20% 90%;
+        --muted-foreground: 165 8% 40%;
+        --accent: 33 89% 53%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 40 20% 86%;
+        --input: 40 20% 86%;
+        --ring: 158 65% 26%;
+        --radius: 0.7rem;
+    }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-shadow-strong {
+    text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+}
+
+.hero-overlay {
+    background: linear-gradient(105deg, rgba(9,42,31,0.82) 0%, rgba(9,42,31,0.55) 45%, rgba(9,42,31,0.25) 100%);
+}
+
+.marquee {
+    animation: marquee 26s linear infinite;
+}
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
